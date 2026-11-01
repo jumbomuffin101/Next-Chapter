@@ -1,0 +1,55 @@
+# JavaScript dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Local configuration and secrets (keep example templates)
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.pem
+*.ppk
+*.key
+# Server access bundle; already tracked files require separate removal
+Team-22.zip
+
+# Python dependencies and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Runtime data and uploaded resumes
+uploads/
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite3-journal
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS and editor files
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

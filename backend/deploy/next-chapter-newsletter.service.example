@@ -1,0 +1,20 @@
+# DISABLED EXAMPLE ONLY. Do not install/start without separate owner approval.
+[Unit]
+Description=Next Chapter Monthly standalone newsletter batch
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=nextchapter
+WorkingDirectory=/srv/next-chapter
+# Provision this untracked file privately; never paste secrets into the unit.
+EnvironmentFile=/etc/next-chapter/newsletter.env
+# Safe default: read-only dry-run, even if the shared delivery environment is live.
+# Live activation additionally needs --authorize-live instead of --dry-run, all
+# delivery safeguards, and explicit approval. Scheduling switch defaults OFF.
+ExecStart=/srv/next-chapter/backend/.venv/bin/python -B -m backend.app.newsletter.monthly --scheduled --dry-run --batch-size 50
+TimeoutStartSec=4h
+NoNewPrivileges=true
+PrivateTmp=true
+UMask=0077

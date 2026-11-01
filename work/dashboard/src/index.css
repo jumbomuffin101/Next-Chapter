@@ -1,0 +1,190 @@
+@font-face {
+  font-family: 'TKH Lato';
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/lato-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'TKH Lato';
+  font-weight: 700;
+  font-display: swap;
+  src: url('./assets/fonts/lato-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'TKH Lato';
+  font-weight: 900;
+  font-display: swap;
+  src: url('./assets/fonts/lato-black.ttf') format('truetype');
+}
+
+/* TKH brand colors */
+:root {
+  --tkh-purple: #5f3cb4;
+  --tkh-purple-dark: #4b2f8f; /* hover shade of TKH Purple */
+  --white: #ffffff;
+  --charcoal: #1a1a1a;
+  --lavender: #f4f0fa;
+  --border: #e4ddf0;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--charcoal);
+  font-family: 'TKH Lato', 'Lato', Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.brand {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--accent-text, var(--tkh-purple));
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sign-in-button {
+  padding: 6px 14px;
+  border: 1px solid var(--tkh-purple);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--accent-text, var(--tkh-purple));
+}
+
+.sign-in-button:hover {
+  background: var(--lavender);
+}
+
+.avatar-button {
+  display: flex;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+}
+
+.avatar {
+  border-radius: 50%;
+  background: var(--lavender);
+  color: var(--accent-text, var(--tkh-purple));
+}
+
+.avatar-button:hover .avatar {
+  background: var(--border);
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+
+
+/* Admin grid builds on .alumni-grid from tkh.css.
+   Locations is taller (map + city info), so it spans two rows on wide screens */
+@media (min-width: 651px) {
+  .admin-grid .span-rows {
+    grid-row: span 2;
+  }
+}
+
+.tkh-app .single-view .admin-card {
+  grid-column: 1 / -1;
+}
+
+.map-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  border-radius: 8px;
+  background: var(--lavender);
+  color: var(--accent-text, var(--tkh-purple));
+}
+
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Profile page layout; component styles come from tkh.css */
+.tkh-app.profile-page {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.tkh-app .profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.tkh-app .profile-header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.tkh-app .profile-header .form-notice,
+.tkh-app .profile-header .form-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.tkh-app .profile-photo {
+  width: 96px;
+  height: 96px;
+  font-size: 32px;
+}
+
+.tkh-app .profile-form {
+  padding-bottom: 26px;
+}
+
+.tkh-app .profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.sign-out-button {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px;
+  border: 1px solid #f1b8b3;
+  border-radius: 8px;
+  background: var(--white);
+  color: #b42318;
+}
+
+.sign-out-button:hover {
+  background: #fef3f2;
+}

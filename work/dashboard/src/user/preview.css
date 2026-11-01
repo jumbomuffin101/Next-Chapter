@@ -1,0 +1,5 @@
+/* Only the isolated development page loads this shell. */
+html.alumni-preview-page { background: #fff; color-scheme: light; }
+.alumni-preview-page body { margin: 0; }
+.alumni-preview { max-width: 1260px; margin: 0 auto; padding: 20px; }
+@media (max-width: 650px) { .alumni-preview { padding: 4px; } }

@@ -1,0 +1,115 @@
+{
+  "source": "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics (OEWS), national annual wages",
+  "estimates_year": "2025",
+  "fetched": "2026-10-17",
+  "occupations": {
+    "11-3021": {
+      "name": "Computer and Information Systems Managers",
+      "p25": 138060,
+      "median": 175140,
+      "p75": 220730
+    },
+    "15-1212": {
+      "name": "Information Security Analysts",
+      "p25": 97810,
+      "median": 129180,
+      "p75": 163500
+    },
+    "15-2051": {
+      "name": "Data Scientists",
+      "p25": 85660,
+      "median": 120230,
+      "p75": 158880
+    },
+    "15-1242": {
+      "name": "Database Administrators and Architects",
+      "p25": 79610,
+      "median": 104620,
+      "p75": 135460
+    },
+    "15-1241": {
+      "name": "Computer Network Architects",
+      "p25": 104620,
+      "median": 134050,
+      "p75": 168200
+    },
+    "15-1244": {
+      "name": "Network and Computer Systems Administrators",
+      "p25": 78010,
+      "median": 99130,
+      "p75": 126640
+    },
+    "15-1253": {
+      "name": "Software Quality Assurance Analysts and Testers",
+      "p25": 80310,
+      "median": 104300,
+      "p75": 133180
+    },
+    "15-1255": {
+      "name": "Web and Digital Interface Designers",
+      "p25": 73290,
+      "median": 104000,
+      "p75": 158820
+    },
+    "15-1254": {
+      "name": "Web Developers",
+      "p25": 64230,
+      "median": 92650,
+      "p75": 126230
+    },
+    "15-1252": {
+      "name": "Software Developers",
+      "p25": 105210,
+      "median": 135980,
+      "p75": 171980
+    },
+    "15-1211": {
+      "name": "Computer Systems Analysts",
+      "p25": 82860,
+      "median": 105850,
+      "p75": 134110
+    },
+    "43-4051": {
+      "name": "Customer Service Representatives",
+      "p25": 36870,
+      "median": 44770,
+      "p75": 51780
+    },
+    "15-1231": {
+      "name": "Computer Network Support Specialists",
+      "p25": 58240,
+      "median": 76220,
+      "p75": 98750
+    },
+    "15-1232": {
+      "name": "Computer User Support Specialists",
+      "p25": 49000,
+      "median": 61860,
+      "p75": 79040
+    },
+    "13-1082": {
+      "name": "Project Management Specialists",
+      "p25": 78440,
+      "median": 102320,
+      "p75": 133100
+    },
+    "27-1024": {
+      "name": "Graphic Designers",
+      "p25": 49040,
+      "median": 62960,
+      "p75": 81830
+    },
+    "13-1161": {
+      "name": "Market Research Analysts and Marketing Specialists",
+      "p25": 58350,
+      "median": 78760,
+      "p75": 108310
+    },
+    "41-3091": {
+      "name": "Sales Representatives of Services",
+      "p25": 47670,
+      "median": 69990,
+      "p75": 100480
+    }
+  }
+}

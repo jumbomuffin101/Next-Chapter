@@ -1,0 +1,12 @@
+# DISABLED EXAMPLE ONLY. No active workflow or registered recurring job.
+[Unit]
+Description=Next Chapter Monthly at 09:00 New York time on day one
+
+[Timer]
+OnCalendar=*-*-01 09:00:00 America/New_York
+Unit=next-chapter-newsletter.service
+Persistent=true
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target

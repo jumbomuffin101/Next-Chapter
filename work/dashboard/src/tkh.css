@@ -1,0 +1,267 @@
+/* Shared look for every screen (admin and alumni); rules are scoped to .tkh-app.
+   Colors map onto the shared TKH palette in src/index.css so admin and alumni match. */
+.tkh-app, .tkh-app .profile-dialog { --brand: var(--tkh-purple); --brand-hover: var(--tkh-purple-dark);
+  --paper: var(--lavender); --soft: var(--lavender);
+  --ink: var(--charcoal); --muted: #655f70; --line: var(--border); --focus: var(--tkh-purple);
+  color: var(--ink); }
+.tkh-app *, .tkh-app .profile-dialog * { box-sizing: border-box; }
+.tkh-app button, .tkh-app .profile-dialog button, .tkh-app .profile-dialog input, .tkh-app .profile-dialog textarea { font: inherit; }
+.tkh-app button, .tkh-app .profile-dialog button { cursor: pointer; }
+.tkh-app :focus-visible, .tkh-app .profile-dialog :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+.tkh-app .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brand); display: inline-block; flex-shrink: 0; }
+.tkh-app .alumni-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+.tkh-app .eyebrow { font-size: 10px; letter-spacing: 1.3px; font-weight: 700; color: var(--muted); }
+.tkh-app .alumni-heading h1 { font-size: clamp(27px, 3vw, 38px); font-weight: 700; letter-spacing: -1.4px; margin: 12px 0 10px; line-height: 1.2; }
+.tkh-app .alumni-heading p { margin: 0; color: var(--muted); font-size: 14px; }
+.tkh-app .primary-button, .tkh-app .secondary-button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; border: 1px solid transparent; border-radius: 8px; padding: 12px 17px; font-size: 13px !important; font-weight: 700 !important; text-decoration: none; line-height: 1.4; }
+.tkh-app .primary-button { background: var(--brand); color: var(--white); box-shadow: 0 2px 3px #291b4b10; }
+.tkh-app .primary-button:hover { background: var(--brand-hover); }
+.tkh-app .secondary-button { border-color: var(--line); color: var(--brand-text, var(--brand)); background: var(--surface, #fff); }
+.tkh-app .secondary-button:hover { background: var(--soft); border-color: var(--lavender); }
+.tkh-app .text-button { display: inline-flex; align-items: center; gap: 10px; padding: 0; border: 0; background: none; color: var(--brand-text, var(--brand)); font-size: 12px !important; font-weight: 700 !important; text-decoration: none; }
+.tkh-app .text-button:hover, .tkh-app .inline-button:hover { text-decoration: underline; }
+.tkh-app .alumni-tabs { display: flex; border-bottom: 1px solid var(--line); gap: 30px; }
+.tkh-app .alumni-tabs button { background: none; border: 0; padding: 0 2px 16px; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; position: relative; }
+.tkh-app .alumni-tabs button[aria-selected='true'] { color: var(--brand-text, var(--brand)); font-weight: 700; }
+.tkh-app .alumni-tabs button[aria-selected='true']::after { content: ''; position: absolute; height: 4px; background: var(--brand); bottom: -1px; left: 0; right: 0; border-radius: 4px; }
+.tkh-app .preview-note { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); padding: 14px 0; }
+.tkh-app .preview-note .status-dot { background: #8a6500; }
+.tkh-app .checkin-banner { display: flex; align-items: center; gap: 16px; padding: 19px 24px; background: var(--brand); color: #fff; border: 1px solid var(--brand); border-radius: 11px; margin: 4px 0 24px; }
+.tkh-app .banner-icon { flex-shrink: 0; width: 44px; height: 44px; background: var(--lavender); color: var(--brand-text, var(--brand)); border-radius: 50%; display: grid; place-items: center; }
+.tkh-app .checkin-banner strong { font-size: 14px; font-weight: 700; }
+.tkh-app .checkin-banner p { color: #e5def2; margin: 5px 0 0; font-size: 12px; line-height: 1.5; }
+.tkh-app .checkin-banner .text-button { color: var(--white); margin-left: auto; flex-shrink: 0; }
+.tkh-app .alumni-grid { display: grid; grid-template-columns: 1fr 1.35fr; gap: 22px; align-items: stretch; }
+.tkh-app .card { padding: 25px 26px 0; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 3px #291b4b06; min-width: 0; overflow: hidden; }
+.tkh-app .card-title { font-size: 18px; letter-spacing: -.3px; font-weight: 900; margin: 0 0 7px; }
+.tkh-app .card-intro { color: var(--muted); font-size: 12px; margin: 0 0 20px; line-height: 1.5; }
+.tkh-app .admin-card, .tkh-app .profile-form, .tkh-app .jobs-card, .tkh-app .journey-card, .tkh-app .checkin-card { display: flex; flex-direction: column; }
+.tkh-app .source-label { display: flex; align-items: center; gap: 7px; font-size: 10px; color: var(--muted); padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.tkh-app .jobs-empty, .tkh-app .empty-state { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 25px 8px 28px; flex: 1; justify-content: center; }
+.tkh-app .icon-tile { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; width: 49px; height: 49px; border-radius: 12px; background: var(--soft); color: var(--brand-text, var(--brand)); }
+.tkh-app .jobs-empty h3, .tkh-app .empty-state h3, .tkh-app .journey-empty h3 { font-size: 16px; line-height: 1.4; font-weight: 700; max-width: 260px; margin: 15px auto 8px; }
+.tkh-app .jobs-empty p, .tkh-app .empty-state p, .tkh-app .journey-empty p { font-size: 12px; line-height: 1.8; color: var(--muted); max-width: 295px; margin: 0 auto 20px; }
+.tkh-app .card-footer { margin: auto -26px 0; padding: 14px 25px; background: var(--paper); border-top: 1px solid var(--line); display: flex; align-items: center; gap: 6px; font-size: 10px; color: var(--muted); flex-wrap: wrap; }
+.tkh-app .inline-button { border: 0; background: none; padding: 0; color: var(--brand-text, var(--brand)); font-size: inherit !important; font-weight: 700 !important; }
+.tkh-app .journey-empty { text-align: center; padding: 30px 12px 35px; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.tkh-app .journey-illustration { height: 72px; width: 190px; position: relative; display: flex; align-items: flex-end; gap: 12px; padding: 0 22px; border-bottom: 1px solid var(--line); }
+.tkh-app .journey-illustration > span { width: 36px; background: var(--soft); height: 20px; border-radius: 5px 5px 0 0; }
+.tkh-app .journey-illustration > span:nth-child(2) { height: 36px; background: var(--lavender); }
+.tkh-app .journey-illustration > span:nth-child(3) { height: 56px; background: var(--brand); }
+.tkh-app .journey-illustration svg { position: absolute; right: 15px; top: -14px; color: var(--brand-text, var(--brand)); background: var(--soft); border: 5px solid var(--soft); border-radius: 8px; box-sizing: content-box; }
+.tkh-app .journey-empty .text-button { margin-top: 2px; }
+.tkh-app .profile-summary { display: flex; gap: 12px; align-items: center; margin: 23px 0 18px; }
+.tkh-app .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; background: var(--lavender); color: var(--brand-text, var(--brand)); font-size: 15px; font-weight: 700; }
+.tkh-app .profile-summary h3 { font-size: 13px; margin: 0 0 5px; }
+.tkh-app .profile-summary p { font-size: 11px; margin: 0; color: var(--muted); }
+.tkh-app .completion-number { margin-left: auto; font-size: 25px; font-weight: 500; }
+.tkh-app .completion-number > span { font-size: 12px; }
+.tkh-app .completion-bar { width: 100%; height: 6px; border: 0; border-radius: 8px; background: var(--soft); display: block; accent-color: var(--brand); }
+.tkh-app .completion-bar::-webkit-progress-bar { background: var(--soft); border-radius: 8px; }
+.tkh-app .completion-bar::-webkit-progress-value { background: var(--brand); border-radius: 8px; }
+.tkh-app .completion-bar::-moz-progress-bar { background: var(--brand); border-radius: 8px; }
+.tkh-app .completion-list { list-style: none; padding: 0; margin: 19px 0; display: grid; gap: 12px; }
+.tkh-app .completion-list li { display: flex; gap: 9px; align-items: center; font-size: 12px; }
+.tkh-app .completion-list li > span:last-child { margin-left: auto; font-size: 10px; color: var(--muted); }
+.tkh-app .complete, .tkh-app .incomplete { width: 17px; height: 17px; border-radius: 50%; display: grid; place-items: center; }
+.tkh-app .complete { background: var(--soft); color: var(--brand-text, var(--brand)); }
+.tkh-app .incomplete { border: 1px solid var(--line); }
+.tkh-app .incomplete > span { width: 3px; height: 3px; border-radius: 50%; background: #aca3ba; }
+.tkh-app .full-button { width: 100%; margin-bottom: 24px; }
+.tkh-app .checkin-content { display: flex; gap: 17px; margin: 20px 0 25px; }
+.tkh-app .peach { background: var(--lavender); color: var(--brand-text, var(--brand)); }
+.tkh-app .checkin-content h3 { font-size: 18px; font-weight: 700; margin: 10px 0; max-width: 260px; letter-spacing: -.3px; }
+.tkh-app .checkin-content p { color: var(--muted); font-size: 12px; line-height: 1.8; margin: 0; max-width: 340px; }
+.tkh-app .checkin-card > .text-button { margin: 0 0 30px 66px; }
+.tkh-app .learning-strip { display: flex; align-items: center; gap: 17px; background: var(--lavender); border: 1px solid var(--lavender); border-radius: 12px; margin-top: 23px; padding: 22px 26px; }
+.tkh-app .lavender { background: #ffffff80; color: var(--brand-text, var(--brand)); }
+.tkh-app .learning-strip .eyebrow { color: var(--brand-text, var(--brand)); }
+.tkh-app .learning-strip h3 { font-size: 15px; font-weight: 700; margin: 6px 0; }
+.tkh-app .learning-strip p { font-size: 12px; color: var(--brand-text, var(--brand)); margin: 0; line-height: 1.6; overflow-wrap: anywhere; }
+.tkh-app .learning-strip > .text-button { margin-left: auto; color: var(--brand-text, var(--brand)); flex-shrink: 0; }
+.tkh-app .alumni-footer { display: flex; justify-content: space-between; color: var(--muted); font-size: 10px; padding: 27px 0 5px; gap: 15px; }
+.tkh-app .save-message { display: flex; align-items: center; gap: 10px; background: var(--soft); border: 1px solid var(--lavender); padding: 10px 15px; border-radius: 8px; font-size: 12px; margin: 3px 0 18px; }
+.tkh-app .save-message .icon-button { margin-left: auto; }
+.tkh-app .career-timeline { list-style: none; margin: 16px 0 27px; padding: 0 0 0 44px; max-height: 400px; overflow: auto; }
+.tkh-app .career-timeline li { position: relative; padding: 0 0 28px 4px; }
+.tkh-app .career-timeline li:not(:last-child)::before { content: ''; position: absolute; width: 1px; background: var(--line); top: 30px; bottom: -1px; left: -25px; }
+.tkh-app .timeline-node { position: absolute; left: -42px; top: -3px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: var(--brand-text, var(--brand)); background: var(--soft); }
+.tkh-app .timeline-node.current { background: var(--brand); color: var(--white); }
+.tkh-app .timeline-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.tkh-app .timeline-heading .eyebrow { font-size: 9px; letter-spacing: .5px; }
+.tkh-app .career-timeline h3 { font-size: 16px; margin: 11px 0 6px; font-weight: 700; }
+.tkh-app .career-timeline p { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.7; }
+.tkh-app .career-timeline .timeline-description { margin-top: 8px; white-space: pre-line; overflow-wrap: anywhere; }
+.tkh-app .tag { display: inline-flex; padding: 5px 8px; background: var(--soft); color: var(--brand-text, var(--brand)); font-size: 10px; border-radius: 5px; }
+.tkh-app .tag.green { background: var(--brand); color: var(--white); font-size: 9px; }
+.tkh-app .single-view { grid-template-columns: 1fr 1fr; margin-top: 8px; }
+.tkh-app .single-view .jobs-card { grid-column: 1 / -1; }
+.tkh-app .single-view .jobs-empty { min-height: 290px; }
+.tkh-app .single-view .details-card { grid-column: 1 / -1; padding-bottom: 26px; }
+.tkh-app .contact-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 25px 0; }
+.tkh-app .contact-details dt { font-size: 11px; color: var(--muted); margin-bottom: 7px; }
+.tkh-app .contact-details dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
+.tkh-app .details-card h3 { font-size: 14px; margin: 24px 0 12px; }
+.tkh-app .education-item { font-size: 13px; border-left: 2px solid var(--lavender); padding: 3px 0 3px 14px; margin: 15px 0; }
+.tkh-app .education-item p { margin: 5px 0; color: var(--muted); }
+.tkh-app .education-item span { font-size: 11px; color: var(--muted); }
+.tkh-app .skill-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.tkh-app .muted { color: var(--muted); font-size: 13px; }
+.tkh-app .job-list { display: grid; gap: 15px; padding: 20px 0; }
+.tkh-app .job-item { padding: 17px; border: 1px solid var(--line); border-radius: 8px; }
+.tkh-app .job-company { font-size: 11px; color: var(--muted); }
+.tkh-app .job-item h3 { font-size: 16px; margin: 8px 0; }
+.tkh-app .job-item p { font-size: 12px; color: var(--muted); display: flex; gap: 5px; }
+.tkh-app .job-item .text-button { display: flex; margin-top: 14px; }
+.tkh-app .profile-dialog { padding: 0; border: 1px solid var(--line); border-radius: 16px; width: min(740px, calc(100vw - 32px)); max-height: calc(100dvh - 48px); box-shadow: 0 24px 100px #291b4b40; }
+.tkh-app .profile-dialog::backdrop { background: #291b4b80; backdrop-filter: blur(3px); }
+.tkh-app .editor-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 26px 30px; border-bottom: 1px solid var(--line); }
+.tkh-app .editor-header h2 { font-size: 25px; letter-spacing: -.7px; margin: 9px 0; font-weight: 700; }
+.tkh-app .editor-header p { font-size: 13px; color: var(--muted); margin: 0; }
+.tkh-app .icon-button { display: inline-flex; align-items: center; justify-content: center; border: 0; background: transparent; color: inherit; padding: 6px; border-radius: 6px; }
+.tkh-app .icon-button:hover { background: var(--soft); }
+.tkh-app .editor-body { padding: 24px 30px; }
+.tkh-app .import-panel { display: flex; gap: 15px; padding: 20px; background: var(--soft); border: 1px dashed #a99bc4; border-radius: 10px; }
+.tkh-app .import-panel > svg { flex-shrink: 0; margin-top: 3px; }
+.tkh-app .import-panel h3 { font-size: 14px; margin: 0 0 8px; }
+.tkh-app .import-panel p { font-size: 12px; color: var(--muted); line-height: 1.7; margin: 0 0 12px; }
+.tkh-app .import-button { position: relative; cursor: pointer; padding: 9px 12px; }
+.tkh-app .import-button input { position: absolute; inset: 0; opacity: 0; width: 100%; cursor: pointer; }
+.tkh-app .import-button:focus-within { outline: 3px solid var(--focus); outline-offset: 3px; }
+.tkh-app .form-section { padding-top: 26px; }
+.tkh-app .form-section > h3, .tkh-app .section-heading h3 { color: var(--muted); font-size: 12px; font-weight: 700; display: flex; gap: 13px; align-items: center; margin: 0 0 18px; }
+.tkh-app .form-section h3 span { color: var(--ink); font-size: 16px; }
+.tkh-app .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.tkh-app .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.tkh-app .form-field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px; }
+.tkh-app .form-grid .form-field { margin: 0; }
+.tkh-app .form-field > span { font-size: 12px; color: var(--brand-text, var(--brand)); }
+.tkh-app .form-field input, .tkh-app .form-field textarea { min-width: 0; width: 100%; border: 1px solid #b8afc6; background: var(--surface, #fff); color: var(--ink); border-radius: 6px; padding: 10px 11px; font-size: 13px; line-height: 1.5; }
+.tkh-app .form-field textarea { resize: vertical; }
+.tkh-app .form-field input:disabled { background: var(--paper); }
+.tkh-app .form-field input::placeholder, .tkh-app .form-field textarea::placeholder { color: var(--muted); }
+.tkh-app .form-field.wide { grid-column: 1 / -1; }
+.tkh-app .record-fields { border: 1px solid var(--line); border-radius: 8px; padding: 18px; margin: 0 0 17px; min-width: 0; }
+.tkh-app .record-fields legend { font-size: 11px; color: var(--muted); padding: 0 6px; }
+.tkh-app .checkbox-field { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.tkh-app .checkbox-field input { accent-color: var(--brand); width: 17px; height: 17px; }
+.tkh-app .remove-button { border: 0; background: none; color: #9d503e; padding: 0; margin-top: 16px; font-size: 11px !important; }
+.tkh-app .form-hint { font-size: 12px; color: var(--muted); margin: 0 0 8px; line-height: 1.7; }
+.tkh-app .parser-warnings { background: #fff6df; border: 1px solid #eddeb1; border-radius: 8px; padding: 14px 18px; margin-top: 16px; }
+.tkh-app .parser-warnings h3 { margin: 0 0 7px; font-size: 13px; }
+.tkh-app .parser-warnings ul { padding-left: 18px; margin: 0; font-size: 12px; line-height: 1.8; }
+.tkh-app .form-error, .tkh-app .form-notice { padding: 13px 16px; border-radius: 6px; font-size: 13px; line-height: 1.6; }
+.tkh-app .form-error { color: #893725; background: #fff0eb; border: 1px solid #edc9bd; }
+.tkh-app .form-notice { color: var(--brand-text, var(--brand)); background: var(--soft); }
+.tkh-app .editor-footer { position: sticky; bottom: 0; background: var(--surface, #fff); border-top: 1px solid var(--line); padding: 17px 30px; display: flex; gap: 18px; align-items: center; justify-content: space-between; }
+.tkh-app .editor-footer p { font-size: 10px; color: var(--muted); max-width: 180px; line-height: 1.6; margin: 0; }
+.tkh-app .editor-footer p.form-error { max-width: 420px; font-size: 12px; color: #b3261e; font-weight: 700; }
+.tkh-app .editor-footer > div { display: flex; gap: 9px; }
+@media (max-width: 900px) {
+.tkh-app .alumni-heading { align-items: flex-start; }
+.tkh-app .alumni-heading .primary-button { font-size: 11px !important; padding: 12px; flex-shrink: 0; margin-top: 18px; }
+.tkh-app .alumni-grid { gap: 16px; grid-template-columns: 1fr 1.1fr; }
+.tkh-app .card { padding-left: 20px; padding-right: 20px; }
+.tkh-app .card-footer { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
+.tkh-app .learning-strip { flex-wrap: wrap; }
+.tkh-app .learning-strip > .text-button { margin-left: 66px; }
+}
+@media (max-width: 650px) {
+.tkh-app .alumni-heading { flex-direction: column; gap: 20px; margin-bottom: 26px; }
+.tkh-app .alumni-heading h1 { letter-spacing: -.8px; }
+.tkh-app .alumni-heading .primary-button { margin: 0; font-size: 12px !important; }
+.tkh-app .alumni-heading p { line-height: 1.7; font-size: 13px; }
+.tkh-app .eyebrow { font-size: 9px; letter-spacing: 1px; }
+.tkh-app .alumni-tabs { gap: 25px; }
+.tkh-app .alumni-tabs button { font-size: 12px; }
+.tkh-app .preview-note { font-size: 10px; line-height: 1.6; align-items: baseline; }
+.tkh-app .checkin-banner { padding: 17px; flex-wrap: wrap; gap: 12px; }
+.tkh-app .checkin-banner > div { flex: 1; min-width: 180px; }
+.tkh-app .checkin-banner > .text-button { margin-left: 56px; }
+.tkh-app .alumni-grid, .tkh-app .single-view { grid-template-columns: 1fr; gap: 18px; }
+.tkh-app .journey-empty { min-height: 235px; }
+.tkh-app .checkin-content { margin-top: 15px; }
+.tkh-app .learning-strip { padding: 19px; gap: 13px; }
+.tkh-app .learning-strip > div { flex: 1; min-width: 180px; }
+.tkh-app .learning-strip > .text-button { margin-left: 62px; }
+.tkh-app .alumni-footer { flex-direction: column; gap: 7px; }
+.tkh-app .contact-details, .tkh-app .form-grid { grid-template-columns: 1fr; }
+.tkh-app .editor-header { padding: 22px 20px; }
+.tkh-app .editor-header h2 { font-size: 22px; }
+.tkh-app .editor-body { padding: 20px; }
+.tkh-app .editor-footer { padding: 15px 20px; flex-wrap: wrap; gap: 10px; }
+.tkh-app .editor-footer p { max-width: none; }
+.tkh-app .editor-footer > div { width: 100%; }
+.tkh-app .editor-footer button { flex: 1; }
+.tkh-app .profile-dialog { max-height: calc(100dvh - 24px); }
+.tkh-app .import-panel { padding: 15px; gap: 10px; }
+.tkh-app .save-message { align-items: flex-start; font-size: 11px; }
+.tkh-app .save-message > svg { flex-shrink: 0; }
+}
+
+.tkh-app { background: var(--white); padding: 28px; border-radius: 12px; text-align: left; color-scheme: light; line-height: 1.5; }
+.tkh-app h1, .tkh-app h2, .tkh-app h3 { color: inherit; }
+.tkh-app h1, .tkh-app .card-title { color: var(--brand-text, var(--brand)); }
+.tkh-app .card, .tkh-app .profile-dialog { background: var(--surface, #fff); }
+@media (max-width: 650px) { .tkh-app { padding: 18px 12px; } }
+
+/* The nearby organization name supplies the accessible text for this decorative logo. */
+.tkh-app .alumni-heading > div::before {
+  content: ''; display: block; width: 190px; height: 64px; margin-bottom: 20px;
+  background: url('./assets/tkh-logo.png') left center / contain no-repeat;
+}
+.tkh-app .alumni-heading { align-items: flex-end; }
+.tkh-app .alumni-heading > .primary-button { margin-bottom: 3px; }
+.tkh-app .card { border-top: 3px solid var(--brand); }
+.tkh-app .profile-card { border-top-color: var(--lavender); }
+.tkh-app .alumni-footer { border-top: 1px solid var(--line); margin-top: 26px; }
+.tkh-app ::selection { color: var(--charcoal); background: var(--border); }
+@media (max-width: 650px) {
+  .tkh-app .alumni-heading { align-items: flex-start; }
+  .tkh-app .alumni-heading > div::before { width: 160px; height: 54px; }
+}
+
+/* Admin dashboard: stat tiles and simple data rows */
+.tkh-app .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; padding: 18px 0 26px; }
+.tkh-app .stat { padding: 14px; border: 1px solid var(--line); border-radius: 8px; }
+.tkh-app .stat strong { display: block; font-size: 21px; letter-spacing: -0.5px; line-height: 1.3; }
+.tkh-app .stat span { font-size: 11px; color: var(--muted); }
+.tkh-app .data-list { list-style: none; margin: 0; padding: 8px 0 22px; }
+.tkh-app .data-row { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 10px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.tkh-app .data-row.head { font-size: 10px; letter-spacing: 1px; color: var(--muted); font-weight: 700; text-transform: uppercase; padding-top: 4px; }
+.tkh-app .data-row strong small { display: block; font-weight: 400; color: var(--muted); font-size: 11px; margin-top: 3px; overflow-wrap: anywhere; }
+.tkh-app .data-row.person-row { grid-template-columns: minmax(180px, 1fr) 2fr; }
+.tkh-app .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+@media (max-width: 640px) {
+  .tkh-app .data-row, .tkh-app .data-row.person-row { grid-template-columns: 1fr 1fr; }
+  .tkh-app .data-row strong { grid-column: 1 / -1; }
+}
+
+/* Alumni dashboard layout from the "restructure user dashboard" change: one primary action,
+   short summaries, details on demand. Ported from the old user.css (.alumni-app -> .tkh-app). */
+.tkh-app .jobs-card, .tkh-app .journey-card, .tkh-app .profile-card, .tkh-app .details-card, .tkh-app .checkin-card { padding-bottom: 24px; }
+.tkh-app .profile-view { grid-template-columns: 1.1fr 1fr; align-items: start; }
+.tkh-app .profile-view .details-card { padding-bottom: 26px; }
+.tkh-app .profile-view .contact-details { grid-template-columns: 1fr; gap: 14px; }
+.tkh-app .profile-card .completion-list { margin-bottom: 0; }
+.tkh-app .checkin-content { margin: 24px 0 18px; }
+.tkh-app .checkin-content h3 { font-size: 23px; }
+.tkh-app .checkin-status { display: flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.tkh-app .compact-note { color: var(--muted); font-size: 11px; margin: auto 0 0; padding-top: 12px; border-top: 1px solid var(--line); }
+.tkh-app .role-details { margin-top: 10px; }
+.tkh-app summary { cursor: pointer; font-size: 12px; font-weight: 700; color: var(--brand-text, var(--brand)); }
+.tkh-app summary:hover { text-decoration: underline; }
+.tkh-app .parser-warnings[open] summary { margin-bottom: 8px; }
+.tkh-app .import-panel { display: block; padding: 14px 16px; border-style: solid; }
+.tkh-app .import-panel[open] summary { margin-bottom: 12px; }
+.tkh-app .editor-header h2 { margin-top: 0; }
+@media (max-width: 650px) {
+  .tkh-app .profile-view { grid-template-columns: 1fr; }
+}
+.tkh-app .stat small { display: block; font-size: 10px; color: var(--muted); margin-top: 4px; }
+.tkh-app .data-note { font-size: 11px; line-height: 1.6; color: var(--muted); margin: -12px 0 22px; }
+.tkh-app .salary-hint { font-size: 12px; line-height: 1.6; color: var(--muted); margin: 8px 0 0; }
+.tkh-app .salary-hint .text-button { margin-left: 8px; }
+.tkh-app .form-field select { font: inherit; font-size: 14px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface, #fff); }
+.tkh-app .role-salary label { display: grid; gap: 6px; }
+.tkh-app .role-salary label > span { font-size: 11px; color: var(--muted); }
